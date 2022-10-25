@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ㅎㅎ..</title>
+
+    <style>
+
+        body{
+            background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdQgYtU%2FbtqVe8WNkSr%2F18o2eEG2sXHkZR3T2TZl81%2Fimg.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        div{
+            /* border : 1px solid red; */
+            box-sizing : border-box;
+        }
+
+        /* 전체를 감싸는 div */
+        .wrap{
+            width : 1000px;
+            height : 800px;
+            margin : auto;
+        }
+
+        /* 큰 4등분 속성 */
+        .warp > div{width : 100%;}
+        #header, #footer{height : 20%;}
+        #navigator{height : 5%;}
+        #content{height : 55%;}
+
+        /* 세부 div들 속성 */
+        /* 공통속성 */
+        #header > div, #content > div{
+            height : 100%;
+            float : left;
+        }
+
+        /* 각각의 요소들의 가로길이를 정해주기 */
+        #header_1 { width : 20%; }
+        #header_2 { width : 65%; }
+        #header_3 { width : 15%; }
+
+        #content_1 { width : 15%; }
+        #content_2 { width : 60%; }
+        #content_3 { width : 25%; }
+
+
+        /* ------- 여기서부터는 footer 영역 --------- */
+
+        /* 세부 속성 */
+        #footer_1{
+            width:100%;
+            height : 20%;
+            background-color :rgb(245, 245, 245);
+        }
+        #footer_2{
+            width:100%;
+            height : 80%;
+        }
+
+        /* footer_1의 a태그 속성 */
+        #footer_1 > a {
+            text-decoration : none;
+            color : rgb(54, 54, 54);
+            font-weight : 550;
+            margin : 15px;
+            vertical-align : middle;
+        }
+
+        #footer_1 > a:hover{
+            color : red;
+        }
+
+        /* p태그에 대한 세부적인 속성들 */
+        #footer_2 > p{
+            width : 100%;
+            /* p태그의 특성 상 두개의 p태그 사이에 margin이 기본적으로 위아래 16px씩 들어가있음 */
+            margin : 0;
+            box-sizing : border-box; /* p태그의 테두리까지를 부모의 20/80%으로 지정해야 부모 영역안에 잘 담김 */
+            font-size : 12px;
+            color : rgb(94, 94, 94);
+        }
+
+        #p1{
+            height : 80%;
+            padding-top : 5px;
+            padding-left : 10px;
+        }
+        #p2{
+            height : 20%;
+            font-weight : 300;
+            text-align : center;
+        }
+
+
+        /* -------------- 여기부터는 loginForm -------------------- */
+
+                /* 1번 */
+                #login_form{
+            width : 100%;
+            height : 30%;
+        }
+
+        /* 2_1, 2_2번 */
+        #login_form > * { width : 100%; }
+        #login_form_input { height : 80%;}
+        #login_form_etc { height : 20%;}
+
+        /* 3_1, 3_2번 */
+        #login_form_input > div{
+            height: 100%;
+            float : left;
+        }
+        #login_input_id_pwd { width : 65%; }
+        #login_input_btn { width : 35%; }
+        /* input 태그 늘려주기 */
+        #login_input_id_pwd > input {
+            width : 100%;
+            height : 50%;
+            box-sizing : border-box;
+        }
+        #login_input_btn > input{
+            width : 100%;
+            height : 100%;
+        }
+
+        #login_form_etc > a{
+            text-decoration : none;
+            color : rgb(71, 71, 71);
+            font-size : 14px;
+            margin : 5px;
+        }
+
+        /* -----------------------여기부터는 searchForm ----------------------- */
+
+        #header_2{
+            position : relative;
+        }
+
+        #search_form{
+            width : 70%;
+            height : 20%;
+            position : absolute;
+            top : 0px;
+            left : 0px;
+            right : 0px;
+            bottom : 0px;
+            margin : auto;
+        }
+
+
+        /* 검색창 form태그 내부 div속성 */
+        #search_form > div{
+            height: 100%;
+            float : left;
+        }
+
+        #search_text { width : 85%; }
+        #search_btn { width : 15%; }
+
+        /* input 태그들 늘려주기 */
+        #search_form input {
+            width : 100%;
+            height : 100%;
+            box-sizing : border-box;
+        }
+
+        /* ------------------------ 여기부터는 navibar ----------------------------- */
+
+        #navi{
+            list-style : none;
+            /* ul요소는 기본적으로 위, 아래 margin이 존재한다. 심지어 padding도 있다. */
+            margin : 0px;
+            padding : 0px;
+            height : 100%;
+        }
+
+        #navi > li {
+            float : left;
+            width : 12%;
+            text-align : center;
+            height : 100%;
+        }
+
+        #navi a {
+            text-decoration : none;
+            color : steelblue;
+            font-weight: 800;
+            width : 100%;
+            height : 100%; /* a태그가 인라인요소이기 때문에 width, height속성이 적용 X */
+            display : block; /* 인라인 요소를 블록으로 바꿔줌 */
+            /* vertical-align : middle; */
+            line-height : 35px; /* 줄간격 속성 px / % / em */
+            /* 화면 통합 시 이슈 발생 : 메인메뉴의 a태그와 서브메뉴의 ul태그가 
+            연결이 미세하게 끊겨있음 그래서 문제 발생 */
+            /* 
+                transform : 애니메이션 효과를 줄 수 있는 속성
+                scale() : 몇 배 확대하겠다.
+            */
+            transform : scale(1);
+        }
+
+        #navi a:hover{
+            color : rgb(64, 120, 167);
+            font-size : 17px;
+        }
+
+        #navi > li > ul {
+            list-style : none;
+            padding : 0px;
+            display : none; /* 평소에는 안보이다가 마우스가 올라가는 순간 펼쳐지는 효과 1 */
+        }
+
+        #navi > li > a:hover + ul {
+            display : block; /* 평소에는 안보이다가 마우스가 올라가는 순간 펼쳐지는 효과 2 */
+        }
+
+        #navi > li > ul:hover {
+            display : block; /* 평소에는 안보이다가 마우스가 올라가는 순간 펼쳐지는 효과 3 */
+        }
+
+        #navi > li > ul a {font-size : 11px;}
+        #navi > li > ul a:hover {font-size : 14px;}
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1"></div>
+            <div id="header_2">
+                <form action="test.do" id="search_form">
+                    <div id="search_text">
+                        <input type="text" name="query">
+                    </div>
+                    <div id="search_btn">
+                        <input type="submit" value="검색">
+                    </div>
+                </form>
+            </div>
+            <div id="header_3"></div>
+        </div>
+        <div id="navigator">
+            <ul id="navi">
+                <li><a href="">Java</a></li>
+                <li><a href="">Oracle</a></li>
+                <li>
+                    <a href="">Front-end</a>
+                    <ul>
+                        <li><a href="">HTML</a></li>
+                        <li><a href="">CSS</a></li>
+                        <li><a href="">JavaScript</a></li>
+                        <li><a href="">jQuery</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Server</a>
+                    <ul>
+                        <li><a href="">JDBC</a></li>
+                        <li><a href="">Servlet</a></li>
+                        <li><a href="">JSP</a></li>
+                        <li><a href="">Ajax</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Framework</a>
+                    <ul>
+                        <li><a href="">MyBatis</a></li>
+                        <li><a href="">Spring</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="content_1"></div>
+            <div id="content_2"></div>
+            <div id="content_3">
+                <!-- 1. 로그인과 관련된 전체 내용을 감싸는 div -->
+                <div id="login_form">
+                    <!-- 2_1. 입력받을 input태그들이 존재할 영역 -->
+                    <form action="test.do" method="post" id="login_form_input">
+                        <!-- 3_1. 왼쪽 : 아이디, 비밀번호를 입력받을 text box 영역 -->
+                        <div id="login_input_id_pwd">
+                            <input type="text" name="userId" placeholder="아이디넣어라~" required>
+                            <input type="password" name="userPwd" placeholder="비밀번호넣어라~" required>
+                        </div>
+                        <!-- 3_2. 오른쪽 : 로그인버튼이 위치할 button 영역 -->
+                        <div id="login_input_btn">
+                            <input type="submit" value="로그인">
+                        </div>
+                    </form>
+                    <!-- 2_2. 회원가입, ID/PWD찾기 페이지 요철할 a태그들이 존재할 영역 -->
+                    <div id="login_form_etc">
+                        <a href="#">회원가입</a> | 
+                        <a href="#">아이디 / 비밀번호 찾기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footer_1">
+                <a href="#">이용약관</a> |
+                <a href="#">개인정보취급방침</a> |
+                <a href="#">인재채용문의</a> |
+                <a href="#">훈련비 게시</a>
+            </div>
+            <div id="footer_2">
+                <p id="p1">
+                    강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+                    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F    <br>
+                    강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F   <br>
+                    종로지원 : 서울특별시 중구 남대문로 120 대일빌딩 2F, 3F <br>
+                    당산지원 : 서울특별시 영등포구 선유동2로 57 이레빌딩 (구관) 19F, 20F
+                </p>
+                <p id="p2">
+                    Copyright © 1998-2022 C Class Educational Institute All Right Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

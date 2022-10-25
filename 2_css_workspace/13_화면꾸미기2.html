@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #outer{
+            padding:20px;
+            background-color:gold;
+            height:200px;
+        }
+
+        #top{
+            text-align : center;
+        }
+
+        .logo{
+            font-size : 40px;
+            font-weight: 900;
+        }
+
+        #login{
+            width: 200px;
+            margin-top : 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #login>form>table input{
+            width : 150px;
+            height: 30px;
+            border-radius : 5px;
+            border : 1px solid rgb(199, 169, 0);
+        }
+
+        #login>form>table button{
+            width : 70px;
+            height: 70px;
+            border : 2px solid rgb(78, 59, 12);
+            color : white;
+            background-color : rgb(66, 50, 10);
+            border-radius : 5px;
+        }
+
+        #etc{
+            text-align:center;
+        }
+
+        #etc>a{
+            font-size:12px;
+            color: rgb(80, 80, 80);
+        }
+
+        #etc>a:hover{
+            cursor : pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="outer">
+        <div id="top">
+            <label class="logo">MAKAO</label>
+        </div>
+        <div id="login">
+            <form action="login.me" method="post">
+                <table>
+                    <tr>
+                        <td><input type="text" name="userId" placeholder="아이디를 입력하세요"></td>
+                        <td rowspan="2"><button type="submit" id="loginBtn">로그인</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" name="userPwd" placeholder="비밀번호를 입력하세요"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="etc"><a>계정 찾기</a> | <a>비밀번호 재설정</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>
